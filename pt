@@ -1,0 +1,36 @@
+IS parancsok összefoglalója
+IPv4 cim beállitása router interfészeken:
+interface GigabitEthernet 0/0
+ip address 195.220.123.1 255.255.255.0
+no shutdown
+IP cim beállitása kapcsoló VLAN interfészén:
+interface vlan I
+ip address 10.0.0.1 255.0.0.0
+no shutdown
+ip default-gateway 10.0.0.254
+Alapbeallitások routeren, switchen:
+Allomásnév beállitása:
+hostname eszkoz neve
+Védett mód jelszavának beállitása:
+enable secret cisco (titkos (elszó)
+enable password cisco (titkositatian jelszó)
+Konzol bejelentkezés jelszavának megadása:
+line con 0
+password cisco
+login
+Telnet bejelentkezés jelszavának megadasa:
+line vty 0
+password cisco
+login
+Jelszotitkositasbekapcsolasa:
+service password-encryption
+Belépési (banner) üzenet beállitása:
+banner motd #Belepes csak engedellyel!
+Interfész leirás megadása Gig, Fa, VLAN interfészeken:
+description Iroda LAN interfesze
+Konfiguráció mentése:
+copy run start
+copy run tftp
+Konfigurációmegtekintése:
+IS parancsok összefoglalója
+show running-config
